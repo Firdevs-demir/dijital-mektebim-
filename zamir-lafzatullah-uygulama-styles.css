@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  justify-items: center;
+  align-items: stretch;
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.word-box {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 2px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;  /* önemli: grid hücresini doldurur */
+}
+
+.word-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.word-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+.word-box p {
+  margin: 2px 0 0 0;
+  font-size: 1.2rem;
+  color: #333;
+}

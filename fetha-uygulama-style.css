@@ -1,0 +1,44 @@
+/* Genel ayarlar */
+body {
+  font-family: 'Traditional Arabic', serif;
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  direction: rtl;
+}
+
+/* Kutuları 4 sütun x 7 satır olarak düzenle */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Kelime kutularının görünümü */
+.word-box {
+  font-size: 54px;
+  padding: 15px 20px;
+  border: 1px solid #B38F47;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: 'Traditional Arabic', serif;
+}
+
+/* Metin rengi geçişi: füme tonlarında */
+@keyframes textColorFade {
+  0% { color: #C00000; }
+  25% { color: #C00000; }
+  50% { color: #C00000; }
+  75% { color: #C00000; }
+  100% { color: #C00000; }
+}
+
+.word-box.active {
+  animation: textColorFade 1s ease-in-out;
+}

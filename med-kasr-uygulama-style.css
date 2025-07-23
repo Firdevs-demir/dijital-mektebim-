@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fefefe;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.not {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+  max-width: 150px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #bbb;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Aktiflik efekti */
+.card.active {
+  border-color: #007BFF;
+  box-shadow: 0 0 15px #007BFFAA;
+  transform: scale(1.1);
+}

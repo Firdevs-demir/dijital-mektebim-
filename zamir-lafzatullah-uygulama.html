@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zamir ve Lafzatullah</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    margin: 30px 15px;
+  }
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #004085;
+  }
+  p.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    gap: 8px;
+  }
+  p.alert svg {
+    width: 24px;
+    height: 24px;
+    fill: #007bff;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px 5px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .grid-item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 7px 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .grid-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  }
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    pointer-events: none;
+    user-select: none;
+  }
+display: block;
+  margin: 0 auto;
+  object-fit: contain; /* Görsel kutuya sığdırır */
+  /* Kutunun içindeki boşlukları azaltmak için */
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 100%;
+      gap: 15px 18px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Zamir ve Lafzatullah</h1>
+<p class="alert" aria-live="polite" aria-atomic="true">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 1-1.5 3.364v-6.728A4.5 4.5 0 0 1 16.5 12zm2.5 0a7 7 0 0 0-2.294-5.003l-1.414 1.414a5 5 0 0 1 0 7.178l1.414 1.414A7 7 0 0 0 19 12z"/>
+  </svg>
+  Kelimelere tıklayarak sesi dinleyiniz ve tekrar ediniz
+</p>
+
+<div class="grid-container" id="grid-container">
+  <!-- 28 zamir burada olacak -->
+</div>
+
+<script>
+  const container = document.getElementById('grid-container');
+  let html = '';
+  for(let i=1; i<=28; i++) {
+    html += `
+      <div class="grid-item" tabindex="0" role="button" aria-label="Zamir ${i} sesini çal" onclick="playAudio(${i})" onkeydown="if(event.key==='Enter' || event.key===' ') playAudio(${i})">
+        <img src="zamir${i}.png" alt="Zamir ${i}" loading="lazy" />
+      </div>
+      <audio id="audio${i}" src="zamir${i}.mp3"></audio>
+    `;
+  }
+  container.innerHTML = html;
+
+  function playAudio(num) {
+    const audio = document.getElementById('audio' + num);
+    if (!audio) return;
+    document.querySelectorAll('audio').forEach(a => {
+      if (a !== audio) {
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+    audio.play();
+  }
+</script>
+
+</body>
+</html>

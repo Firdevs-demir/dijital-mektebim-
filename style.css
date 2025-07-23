@@ -1,0 +1,132 @@
+body {
+  font-family: 'Scheherazade New', serif;
+  background: linear-gradient(135deg, #f9f6f1 0%, #e0dcd6 100%);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.brand-text {
+  text-align: right;
+}
+
+.site-title {
+  font-size: 2.8rem;
+  margin: 0;
+  color: #2d5a5a;
+}
+
+.slogan {
+  font-size: 1.2rem;
+  color: #4a7c7c;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #2d5a5a;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu li a:hover {
+  background-color: #4a7c7c;
+  color: #fff;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.arabic-salam {
+  font-size: 1.8rem;
+  color: #1c3d3d;
+  margin: 10px 0 25px 0;
+  font-weight: bold;
+}
+
+.sections {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.buttons button {
+  background-color: #4a7c7c;
+  color: white;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 180px;
+}
+
+.buttons button:hover {
+  background-color: #2d5a5a;
+}
+
+.contact {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 12px 0;
+  color: #777;
+  font-size: 0.9rem;
+}

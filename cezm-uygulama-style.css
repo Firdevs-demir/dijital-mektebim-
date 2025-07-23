@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.kelime {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 30px 20px;
+  font-size: 54px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  direction: rtl;
+
+  /* Bitişik harflerin korunması için */
+  white-space: nowrap;
+  user-select: none;
+
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.kelime:hover {
+  transform: scale(1.05);
+}
+body {
+  font-family: 'Traditional Arabic', 'Amiri', serif;
+}

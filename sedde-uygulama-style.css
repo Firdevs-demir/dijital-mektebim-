@@ -1,0 +1,75 @@
+/* Genel ayarlar */
+body {
+  font-family: 'Scheherazade New', serif;
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  direction: rtl;
+}
+
+/* Kutuları 4 sütun x 7 satır olarak düzenle */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Kelime kutularının görünümü */
+.word-box {
+  font-size: 54px;
+  padding: 15px 20px;
+  border: 1px solid #B38F47;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: 'Scheherazade New', serif;
+}
+
+/* Metin rengi geçişi: füme tonlarında */
+@keyframes textColorFade {
+  0% { color: #C00000; }
+  25% { color: #C00000; }
+  50% { color: #C00000; }
+  75% { color: #C00000; }
+  100% { color: #C00000; }
+}
+
+.word-box.active {
+  animation: textColorFade 1s ease-in-out;
+}
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 12px;
+    max-width: 100%;
+  }
+  
+  .word-box {
+    font-size: 42px;
+    padding: 24px 18px;
+  }
+}
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+.music-control img {
+    width: 30px;
+    height: 30px;
